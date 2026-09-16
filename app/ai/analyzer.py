@@ -5,7 +5,7 @@ from app.schemas.analysis import ProjectAnalysis
 
 def analyze_project(description: str) -> ProjectAnalysis:
     """
-    تحلیل توضیحات پروژه به صورت دستی و بدون نیاز به API
+    تحلیل توضیحات پروژه به صورت دستی و بدون نیاز به API خارجی.
     """
 
     text = description.lower()
