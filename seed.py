@@ -72,13 +72,26 @@ services = [
 
 db = SessionLocal()
 
-for service_data in services:
-    service = Service(**service_data)
-    db.add(service)
+try:
+    for service_data in services:
+        existing_service = (
+            db.query(Service)
+            .filter(Service.code == service_data["code"])
+            .first()
+        )
 
-db.commit()
-db.close()
+        if existing_service:
+            existing_service.price = service_data["price"]
+        else:
+            service = Service(**service_data)
+            db.add(service)
 
-print("Database initialized successfully.")
-print("Services added successfully.")
+    db.commit()
 
+except Exception as e:
+    db.rollback()
+    print(f"Error while adding services: {e}")
+    raise
+
+finally:
+    db.close()
