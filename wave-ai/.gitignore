@@ -1,39 +1,9 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-
-# Virtual environments
-venv/
-.venv/
-env/
-ENV/
-
-# Environment variables / secrets
 .env
-.env.*
-!.env.example
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Database
+venv/
+venv312/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.db
-*.sqlite
-*.sqlite3
-
-# Logs
-*.log
-
-# Testing / cache
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-# Jupyter
-.ipynb_checkpoints/
+.python-version
