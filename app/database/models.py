@@ -13,4 +13,4 @@ class Service(Base):
 
     category = Column(String, nullable=False)
 
-    price = Column(Integer, nullable=False)
+    price = Column(Integer, nullable=False, default=0)
